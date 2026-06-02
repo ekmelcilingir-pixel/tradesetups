@@ -14,7 +14,7 @@ TAG = {"Bull Flag": "bullflag", "Breakout": "breakout",
        "Pullback": "pullback", "Bounce": "bounce"}
 
 
-def _card(rank, f, narr, subport, subport_label):
+def _card(rank, f, narr):
     pos = "pos" if f["day_chg"] >= 0 else "neg"
     sign = "+" if f["day_chg"] >= 0 else ""
     s200 = f["sma200"] if f["sma200"] is not None else "—"
@@ -32,7 +32,7 @@ def _card(rank, f, narr, subport, subport_label):
   <div class="card-header">
     <div class="card-rank">{rank}</div>
     <div class="card-ticker">{f['ticker']}</div>
-    <span class="subport-tag {subport.lower()}">{subport} · {subport_label}</span>
+    <span class="subport-tag p3">{f.get('index_tag','')}</span>
     <span class="setup-tag {TAG.get(f['setup'],'breakout')}">{f['setup']}</span>
     <span class="card-spacer"></span>
     <span class="daily-pct {pos}">{sign}{f['day_chg']}% (today)</span>
@@ -64,8 +64,7 @@ def _card(rank, f, narr, subport, subport_label):
 
 def render(meta, picks, skipped, narratives, top_summary, so_what):
     cards = "".join(
-        _card(i + 1, f, narratives.get(f["ticker"], {}), f.get("subport", "P1"),
-              f.get("subport_label", "Investment"))
+        _card(i + 1, f, narratives.get(f["ticker"], {}))
         for i, f in enumerate(picks)
     )
     skipped_li = "".join(

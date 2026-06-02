@@ -24,6 +24,7 @@ import datetime as dt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fetch_data           # noqa: E402
 import detect_setups        # noqa: E402
+import universe as universe_mod  # noqa: E402
 import render as renderer    # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -106,25 +107,45 @@ def load_manifest():
 
 
 def main():
-    pf = json.load(open(os.path.join(ROOT, "portfolio.json"), encoding="utf-8"))
-    holdings = pf["holdings"]
-    sub = {h["ticker"]: h for h in holdings}
+    extra = []
+    pf_path = os.path.join(ROOT, "portfolio.json")
+    if os.path.exists(pf_path):
+        try:
+            extra = [h["ticker"] for h in json.load(open(pf_path, encoding="utf-8")).get("holdings", [])]
+        except Exception:
+            extra = []
+
+    universe = universe_mod.get_universe(extra=extra)
+    tagmap = {u["ticker"]: u["tag"] for u in universe}
+    tickers = [u["ticker"] for u in universe]
+    print(f"Scanning {len(tickers)} tickers (S&P 500 + Nasdaq-100 + Dow + holdings)...")
 
     facts = []
-    for h in holdings:
-        d = fetch_data.get_history(h["ticker"])
-        if not d:
-            continue
-        f = detect_setups.analyze(d)
-        f["subport"] = h.get("subport", "P1")
-        f["subport_label"] = h.get("subport_label", "Investment")
-        facts.append(f)
-        time.sleep(0.4)  # be polite to Yahoo
+    from concurrent.futures import ThreadPoolExecutor, as_completed
 
-    picks, skipped = detect_setups.rank(facts, top=5)
+    def work(tk):
+        d = fetch_data.get_history(tk)
+        if not d:
+            return None
+        f = detect_setups.analyze(d)
+        f["index_tag"] = tagmap.get(tk, "")
+        return f
+
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        futs = {ex.submit(work, tk): tk for tk in tickers}
+        for fut in as_completed(futs):
+            r = fut.result()
+            if r:
+                facts.append(r)
+
+    picks, _rest = detect_setups.rank(facts, top=5)
     if not picks:
         print("No setups today; nothing generated.")
         return
+    # keep the report's "skipped" note short: biggest movers with no setup
+    no_setup = [f for f in facts if not f.get("setup")]
+    no_setup.sort(key=lambda f: abs(f.get("day_chg", 0)), reverse=True)
+    skipped = no_setup[:6]
 
     data, meta = call_claude(picks, skipped)
     narratives = data.get("setups", {})
