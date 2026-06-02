@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Setups — June 2, 2026</title>
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-card: #161b22;
+  --bg-elevated: #1c2230;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --green: #10b981;
+  --red: #ef4444;
+  --amber: #f59e0b;
+  --blue: #60a5fa;
+  --purple: #a78bfa;
+  --neutral: #6b7280;
+  --border: #21262d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  padding: 24px 16px 60px;
+}
+
+.container { max-width: 980px; margin: 0 auto; }
+
+header {
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+header .meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+header .sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--blue);
+}
+
+.tek-cumlede {
+  background: var(--bg-card);
+  border-left: 3px solid var(--blue);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 18px 0 24px;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.yani-nedir {
+  background: var(--bg-card);
+  border-left: 3px solid var(--green);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 22px 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.yani-satiri {
+  background: rgba(16, 185, 129, 0.07);
+  border-left: 2px solid var(--green);
+  padding: 8px 14px;
+  border-radius: 4px;
+  margin: 12px 0 4px;
+  font-size: 14px;
+  color: #c9eadc;
+  font-style: italic;
+}
+
+.setup-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  margin-bottom: 22px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.card-rank {
+  background: var(--blue);
+  color: #0d1218;
+  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.card-ticker {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.card-spacer { flex: 1; }
+.subport-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.subport-tag.p1 { background: rgba(96, 165, 250, 0.18); color: var(--blue); }
+.subport-tag.p2 { background: rgba(167, 139, 250, 0.18); color: var(--purple); }
+.subport-tag.p3 { background: rgba(107, 114, 128, 0.18); color: var(--neutral); }
+.subport-tag.p4 { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+
+.setup-tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.setup-tag.pullback { background: rgba(16, 185, 129, 0.18); color: var(--green); }
+.setup-tag.breakout { background: rgba(96, 165, 250, 0.18); color: var(--blue); }
+.setup-tag.bounce { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+.setup-tag.bullflag { background: rgba(167, 139, 250, 0.18); color: var(--purple); }
+
+.daily-pct {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.daily-pct.pos { background: rgba(16, 185, 129, 0.15); color: var(--green); }
+.daily-pct.neg { background: rgba(239, 68, 68, 0.15); color: var(--red); }
+
+.chart-wrap {
+  background: #0a0e14;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px;
+  margin: 8px 0 12px;
+}
+
+.tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tech-row b { color: var(--text); }
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.box .label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.box .val {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.box .sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.box.entry { border-left: 3px solid var(--green); }
+.box.stop  { border-left: 3px solid var(--red); }
+.box.t1, .box.t2 { border-left: 3px solid var(--green); }
+.box.rr   { border-left: 3px solid var(--amber); }
+.box.entry .val { color: var(--green); }
+.box.stop .val { color: var(--red); }
+.box.t1 .val, .box.t2 .val { color: #6ee7b7; }
+.box.t2 .val { opacity: 0.85; }
+.box.rr .val { color: var(--amber); }
+
+.rr-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 4px;
+  font-weight: 600;
+}
+.rr-badge.iyi { background: rgba(16, 185, 129, 0.18); color: var(--green); }
+.rr-badge.orta { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+
+.range-row {
+  font-size: 12.5px;
+  background: rgba(96, 165, 250, 0.05);
+  border-left: 2px solid var(--blue);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+.range-row b { color: var(--text); }
+
+.option-row {
+  font-size: 13px;
+  margin: 6px 0 12px;
+  padding: 8px 12px;
+  background: rgba(167, 139, 250, 0.06);
+  border-left: 2px solid var(--purple);
+  border-radius: 4px;
+}
+.option-row b { color: var(--purple); }
+
+.trigger {
+  font-size: 13.5px;
+  line-height: 1.55;
+  padding: 10px 0 6px;
+}
+.trigger b { color: var(--text); }
+
+.playbook {
+  font-size: 13px;
+  background: rgba(245, 158, 11, 0.05);
+  border-left: 2px solid var(--amber);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0 4px;
+  color: #ede2c5;
+}
+.playbook b { color: var(--amber); }
+
+.valid {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+
+.skipped {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+.skipped h3 { font-size: 15px; margin-bottom: 8px; }
+.skipped ul { list-style: none; }
+.skipped li {
+  padding: 5px 0;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--border);
+}
+.skipped li:last-child { border-bottom: none; }
+.skipped li b { color: var(--text); }
+
+.disclaimer {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 20px 0;
+  font-size: 13px;
+  color: #ffb4b4;
+}
+.disclaimer b { color: var(--red); }
+
+details.glossary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 14px;
+  margin-top: 18px;
+}
+details.glossary summary {
+  cursor: pointer;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--blue);
+}
+details.glossary .term {
+  margin: 8px 0;
+  font-size: 13px;
+}
+details.glossary .term b { color: var(--text); }
+details.glossary .term span { color: var(--muted); }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11.5px;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .card-ticker { font-size: 18px; }
+  .box .val { font-size: 14px; }
+  header h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Today's Setups</h1>
+  <div class="meta">02.06.2026 20:10:56</div>
+  <div class="sub">2 high-probability swing trade setups · 10 open positions scanned from the portfolio</div>
+</header>
+<div class="tek-cumlede">Two structurally sound setups today: CLS is a post-breakout reversion play waiting for price to come back to earth, while RKLB is a trend-continuation pullback sitting right on dynamic support. Both carry reward-risk ratios above 2.9 with clearly defined stops.</div>
+
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">1</div>
+    <div class="card-ticker">CLS</div>
+    <span class="subport-tag p2">P2 · Satellite</span>
+    <span class="setup-tag breakout">Breakout</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+10.7% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-CLS"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>72</b></span>
+    <span>EMA20 <b>383</b></span>
+    <span>EMA50 <b>363</b></span>
+    <span>SMA200 ~<b>322</b></span>
+    <span>ATR(14) <b>26.13</b></span>
+    <span>Last <b>$472.37</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">431 - 439</div><div class="sub">Pullback into breakout base zone</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">404</div><div class="sub">-7.1% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">512</div><div class="sub">+17.7% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">551</div><div class="sub">+26.7% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:3.11 <span class="rr-badge iyi">Strong</span></div><div class="sub">Risk $31.0 / Reward $96.5</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $324.5 - $474.02 &nbsp;·&nbsp; <b>Time in range:</b> Multi-week base, roughly 6-8 weeks</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 5-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> CLS broke out above a multi-week consolidation base (324.50 to 474.02) on 1.7x average volume with a 10.7% single-day surge, confirming institutional participation. Price is now extended above the entry zone at 431-439; the trade triggers on a pullback into that 431-439 zone, ideally with a lower-volume consolidation day or two to reset the near-term froth from RSI 72.</div>
+  <div class="playbook"><b>Playbook:</b> Take a half position on first touch of 439, add the remainder on a close above 445 or on a second test of 431 that holds. Bank half at T1 of 512 (17.7% gain), letting the remainder run toward T2 at 551. Hard stop at 404; if price closes below 431 on volume before the stop is reached, treat that as early invalidation.</div>
+  <div class="yani-satiri">In short: A high-conviction volume breakout with a well-defined pullback zone and a 3.1-to-1 reward-risk ratio.</div>
+  <div class="valid">Validity: 7 business days. Voided if the 431-439 entry zone is not tested, or if price closes below 431 before entry is established.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">2</div>
+    <div class="card-ticker">RKLB</div>
+    <span class="subport-tag p4">P4 · Trade</span>
+    <span class="setup-tag pullback">Pullback</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+0.8% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-RKLB"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>54</b></span>
+    <span>EMA20 <b>123</b></span>
+    <span>EMA50 <b>103</b></span>
+    <span>SMA200 ~<b>81</b></span>
+    <span>ATR(14) <b>10.98</b></span>
+    <span>Last <b>$123.32</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">121 - 124</div><div class="sub">EMA20 retest within uptrend</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">110</div><div class="sub">-10.2% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">151</div><div class="sub">+23.3% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">167</div><div class="sub">+36.3% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:2.92 <span class="rr-badge iyi">Strong</span></div><div class="sub">Risk $12.5 / Reward $36.5</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $112.41 - $151.0 &nbsp;·&nbsp; <b>Time in range:</b> Recent range 112.41 to 151.00, ~4-5 weeks</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> RKLB has pulled back from its range high of 151.00 and is currently sitting precisely at the EMA20 (123), a natural support level within a well-structured uptrend that also has the EMA50 at 103 and SMA200 at 81 rising below. Today&#x27;s 0.8% gain on below-average volume (0.7x) suggests the pullback is cooling rather than accelerating. The concrete trigger is an intraday hold above 121 with a close back above 124, confirming EMA20 support is intact.</div>
+  <div class="playbook"><b>Playbook:</b> Enter a half position on a confirmed close above 124, add the second half if price pushes through 128 on normal or better volume. Take half off at T1 of 151 (the prior range high, 23.3% gain) and trail the remainder toward T2 at 167. Stop is 110; a daily close below 121 before full entry is achieved voids the setup.</div>
+  <div class="yani-satiri">In short: A textbook EMA20 pullback in a clean uptrend, offering nearly 3-to-1 reward-risk with a tight, logical stop.</div>
+  <div class="valid">Validity: 5 business days. Voided if price closes below 121 before the trigger fires.</div>
+</div>
+<div class="skipped">
+  <h3>Note — positions with no setup generated</h3>
+  <ul><li>All scanned positions produced a setup today.</li></ul>
+</div>
+<div class="yani-nedir"><b>So what?</b> Neither setup demands a chase; CLS needs a pullback to 431-439 and RKLB needs a confirmed close above 124, so patience here is the edge. Set alerts, let price come to you, and size according to the defined risk levels.</div>
+<div class="disclaimer">
+  <b>Risk warning:</b> This report is not investment advice. All numbers are computed from past price data; they do not guarantee the future. Stick to the stop stated in each setup. Size your position so that <b>1-2% of the total portfolio</b> is at risk (Risk = entry − stop). If you don't trust/like a setup, don't take it.
+</div>
+<details class="glossary">
+  <summary>Glossary (term explanations)</summary>
+  <div class="term"><b>EMA20 / EMA50:</b> <span>Exponentially weighted average price of the last 20 / 50 days; shows trend direction.</span></div>
+  <div class="term"><b>SMA200:</b> <span>Simple average of the last 200 days; the main trend filter.</span></div>
+  <div class="term"><b>RSI(14):</b> <span>14-day momentum index (0-100). &lt;30 oversold, &gt;70 overbought.</span></div>
+  <div class="term"><b>ATR(14):</b> <span>14-day average true range = typical daily move; the unit for stops/targets.</span></div>
+  <div class="term"><b>Weighted R:R:</b> <span>Average reward per unit of risk assuming a half-and-half exit at T1 and T2.</span></div>
+</details>
+<footer>
+  Tradesetups pipeline · auto-generated daily<br>
+  Data: Yahoo daily candles (last ~6 months) + portfolio.json<br>
+  Generated at: 02.06.2026 20:10:56
+</footer>
+</div>
+<script>
+function ema(values, period) {
+  const k = 2 / (period + 1);
+  let prev = values[0];
+  const out = [];
+  for (let i = 0; i < values.length; i++) {
+    if (i === 0) { prev = values[0]; }
+    else { prev = values[i] * k + prev * (1 - k); }
+    out.push(prev);
+  }
+  return out;
+}
+
+function renderChart(containerId, closes, entryLow, entryHigh, stop, t1, t2) {
+  const W = 600, H = 180;
+  const padL = 20, padR = 60, padT = 12, padB = 28;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+
+  const ema20arr = ema(closes, 20);
+  const ema50arr = ema(closes, 50);
+
+  // Y range: include all key levels + price
+  const allVals = closes.concat(ema20arr, ema50arr, [entryLow, entryHigh, stop, t1, t2]);
+  let yMin = Math.min.apply(null, allVals);
+  let yMax = Math.max.apply(null, allVals);
+  const pad = (yMax - yMin) * 0.06;
+  yMin -= pad; yMax += pad;
+
+  function x(i) { return padL + (i / (closes.length - 1)) * plotW; }
+  function y(p) { return padT + (1 - (p - yMin) / (yMax - yMin)) * plotH; }
+
+  // Build SVG
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" style="width:100%;height:180px;display:block;background:#0a0e14;border-radius:4px">';
+
+  // Grid (4 horizontal lines)
+  for (let i = 1; i <= 4; i++) {
+    const gy = padT + (i / 5) * plotH;
+    svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (W - padR) + '" y2="' + gy + '" stroke="#1f2937" stroke-width="1" stroke-dasharray="2,4"/>';
+  }
+
+  // Y-axis labels (right side, 3 levels)
+  const lvls = [yMax - pad, (yMin + yMax) / 2, yMin + pad];
+  lvls.forEach((v, idx) => {
+    const ly = y(v);
+    svg += '<text x="' + (W - padR + 4) + '" y="' + (ly + 3) + '" fill="#6b7280" font-size="10" font-family="monospace">' + v.toFixed(0) + '</text>';
+  });
+
+  // Entry band (green fill)
+  const yEH = y(entryHigh), yEL = y(entryLow);
+  svg += '<rect x="' + padL + '" y="' + yEH + '" width="' + plotW + '" height="' + (yEL - yEH) + '" fill="#10b981" fill-opacity="0.13"/>';
+  svg += '<line x1="' + padL + '" y1="' + yEH + '" x2="' + (W - padR) + '" y2="' + yEH + '" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>';
+  svg += '<line x1="' + padL + '" y1="' + yEL + '" x2="' + (W - padR) + '" y2="' + yEL + '" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>';
+
+  // Stop (red dashed)
+  const yS = y(stop);
+  svg += '<line x1="' + padL + '" y1="' + yS + '" x2="' + (W - padR) + '" y2="' + yS + '" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yS + 3) + '" fill="#ef4444" font-size="10" font-weight="bold">Stop</text>';
+
+  // T1, T2 (green dashed)
+  const yT1 = y(t1), yT2 = y(t2);
+  svg += '<line x1="' + padL + '" y1="' + yT1 + '" x2="' + (W - padR) + '" y2="' + yT1 + '" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yT1 + 3) + '" fill="#10b981" font-size="10" font-weight="bold">H1</text>';
+  svg += '<line x1="' + padL + '" y1="' + yT2 + '" x2="' + (W - padR) + '" y2="' + yT2 + '" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3" stroke-opacity="0.55"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yT2 + 3) + '" fill="#10b981" font-size="10" font-weight="bold" opacity="0.7">H2</text>';
+
+  // Entry label
+  svg += '<text x="' + (W - padR + 4) + '" y="' + ((yEH + yEL) / 2 + 3) + '" fill="#10b981" font-size="10" font-weight="bold">Entry</text>';
+
+  // EMA20 (yellow dashed)
+  let p20 = '';
+  ema20arr.forEach((v, i) => { p20 += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + p20 + '" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>';
+
+  // EMA50 (purple dashed)
+  let p50 = '';
+  ema50arr.forEach((v, i) => { p50 += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + p50 + '" stroke="#a78bfa" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>';
+
+  // Price polyline (blue solid)
+  let pP = '';
+  closes.forEach((v, i) => { pP += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + pP + '" stroke="#60a5fa" stroke-width="2.2" fill="none"/>';
+
+  // Current price dot
+  const lastIdx = closes.length - 1;
+  svg += '<circle cx="' + x(lastIdx) + '" cy="' + y(closes[lastIdx]) + '" r="5" fill="#60a5fa"/>';
+  svg += '<circle cx="' + x(lastIdx) + '" cy="' + y(closes[lastIdx]) + '" r="9" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>';
+
+  // Legend bottom-left
+  const legY = H - 8;
+  svg += '<g font-size="10" font-family="-apple-system,sans-serif">';
+  svg += '<line x1="' + padL + '" y1="' + legY + '" x2="' + (padL+12) + '" y2="' + legY + '" stroke="#60a5fa" stroke-width="2.2"/>';
+  svg += '<text x="' + (padL+16) + '" y="' + (legY+3) + '" fill="#8b949e">Price</text>';
+  svg += '<line x1="' + (padL+60) + '" y1="' + legY + '" x2="' + (padL+72) + '" y2="' + legY + '" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>';
+  svg += '<text x="' + (padL+76) + '" y="' + (legY+3) + '" fill="#8b949e">EMA20</text>';
+  svg += '<line x1="' + (padL+125) + '" y1="' + legY + '" x2="' + (padL+137) + '" y2="' + legY + '" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4,3"/>';
+  svg += '<text x="' + (padL+141) + '" y="' + (legY+3) + '" fill="#8b949e">EMA50</text>';
+  svg += '</g>';
+
+  svg += '</svg>';
+  document.getElementById(containerId).innerHTML = svg;
+}
+const setups = {
+  CLS: { closes: [403.03, 401.74, 391.6, 410.21, 422.21, 361.54, 376.54, 409.59, 418.93, 420.73, 417.66, 413.87, 385.21, 375.55, 380.99, 374.07, 372.55, 381.59, 358.55, 342.67, 339.13, 346.48, 354.77, 367.37, 370.84, 357.7, 351.02, 385.39, 426.55, 472.37], entryLow: 431, entryHigh: 439, stop: 404, t1: 512, t2: 551 },
+  RKLB: { closes: [86.64, 90.04, 84.6, 79.68, 82.29, 78.59, 77.02, 82.51, 78.81, 80.31, 78.76, 84.65, 78.58, 105.47, 117.35, 117.56, 124.15, 132.55, 124.77, 131.16, 127.31, 134.28, 125.45, 135.76, 143.2, 150.23, 148.03, 143.48, 122.39, 123.32], entryLow: 121, entryHigh: 124, stop: 110, t1: 151, t2: 167 }
+};
+Object.keys(setups).forEach(function(k){var s=setups[k];renderChart('chart-'+k, s.closes, s.entryLow, s.entryHigh, s.stop, s.t1, s.t2);});
+
+</script>
+</body>
+</html>
