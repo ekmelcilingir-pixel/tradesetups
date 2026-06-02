@@ -1,0 +1,49 @@
+name: daily-tradesetups
+
+# Weekdays at 11:30 UTC (~07:30 New York after the prior US close is settled).
+# Adjust the cron to taste. You can also run it manually from the Actions tab.
+on:
+  schedule:
+    - cron: "30 11 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # allow the job to commit the generated report + manifest
+
+concurrency:
+  group: tradesetups
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Generate today's report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}        # optional
+          MODEL: claude-sonnet-4-6                        # change if you like
+          # PRICE_IN_PER_MTOK: "3"                        # optional -> $ cost in manifest
+          # PRICE_OUT_PER_MTOK: "15"
+        run: python scripts/generate_report.py
+
+      - name: Commit report + manifest
+        run: |
+          git config user.name  "tradesetups-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "tradesetups: $(date -u +%Y-%m-%d) report"
+            git push
+          fi

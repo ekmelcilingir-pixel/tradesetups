@@ -1,0 +1,15 @@
+{
+  "_comment": "Holdings scanned each day. subport: P1 Investment / P2 / P3 / P4 Trade. Edit freely or replace this file with a live pull from your /api/portfolio.",
+  "holdings": [
+    { "ticker": "NVDA", "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "MRVL", "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "CDNS", "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "TSLA", "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "ALAB", "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "NOW",  "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "MU",   "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "AMD",  "subport": "P1", "subport_label": "Investment" },
+    { "ticker": "RKLB", "subport": "P4", "subport_label": "Trade" },
+    { "ticker": "CLS",  "subport": "P2", "subport_label": "Satellite" }
+  ]
+}
