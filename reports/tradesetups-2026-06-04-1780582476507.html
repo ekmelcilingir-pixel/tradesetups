@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Setups — June 4, 2026</title>
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-card: #161b22;
+  --bg-elevated: #1c2230;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --green: #10b981;
+  --red: #ef4444;
+  --amber: #f59e0b;
+  --blue: #60a5fa;
+  --purple: #a78bfa;
+  --neutral: #6b7280;
+  --border: #21262d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  padding: 24px 16px 60px;
+}
+
+.container { max-width: 980px; margin: 0 auto; }
+
+header {
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+header .meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+header .sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--blue);
+}
+
+.tek-cumlede {
+  background: var(--bg-card);
+  border-left: 3px solid var(--blue);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 18px 0 24px;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.yani-nedir {
+  background: var(--bg-card);
+  border-left: 3px solid var(--green);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 22px 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.yani-satiri {
+  background: rgba(16, 185, 129, 0.07);
+  border-left: 2px solid var(--green);
+  padding: 8px 14px;
+  border-radius: 4px;
+  margin: 12px 0 4px;
+  font-size: 14px;
+  color: #c9eadc;
+  font-style: italic;
+}
+
+.setup-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  margin-bottom: 22px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.card-rank {
+  background: var(--blue);
+  color: #0d1218;
+  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.card-ticker {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.card-spacer { flex: 1; }
+.subport-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.subport-tag.p1 { background: rgba(96, 165, 250, 0.18); color: var(--blue); }
+.subport-tag.p2 { background: rgba(167, 139, 250, 0.18); color: var(--purple); }
+.subport-tag.p3 { background: rgba(107, 114, 128, 0.18); color: var(--neutral); }
+.subport-tag.p4 { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+
+.setup-tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.setup-tag.pullback { background: rgba(16, 185, 129, 0.18); color: var(--green); }
+.setup-tag.breakout { background: rgba(96, 165, 250, 0.18); color: var(--blue); }
+.setup-tag.bounce { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+.setup-tag.bullflag { background: rgba(167, 139, 250, 0.18); color: var(--purple); }
+
+.daily-pct {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.daily-pct.pos { background: rgba(16, 185, 129, 0.15); color: var(--green); }
+.daily-pct.neg { background: rgba(239, 68, 68, 0.15); color: var(--red); }
+
+.chart-wrap {
+  background: #0a0e14;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px;
+  margin: 8px 0 12px;
+}
+
+.tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tech-row b { color: var(--text); }
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.box .label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.box .val {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.box .sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.box.entry { border-left: 3px solid var(--green); }
+.box.stop  { border-left: 3px solid var(--red); }
+.box.t1, .box.t2 { border-left: 3px solid var(--green); }
+.box.rr   { border-left: 3px solid var(--amber); }
+.box.entry .val { color: var(--green); }
+.box.stop .val { color: var(--red); }
+.box.t1 .val, .box.t2 .val { color: #6ee7b7; }
+.box.t2 .val { opacity: 0.85; }
+.box.rr .val { color: var(--amber); }
+
+.rr-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 4px;
+  font-weight: 600;
+}
+.rr-badge.iyi { background: rgba(16, 185, 129, 0.18); color: var(--green); }
+.rr-badge.orta { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+
+.range-row {
+  font-size: 12.5px;
+  background: rgba(96, 165, 250, 0.05);
+  border-left: 2px solid var(--blue);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+.range-row b { color: var(--text); }
+
+.option-row {
+  font-size: 13px;
+  margin: 6px 0 12px;
+  padding: 8px 12px;
+  background: rgba(167, 139, 250, 0.06);
+  border-left: 2px solid var(--purple);
+  border-radius: 4px;
+}
+.option-row b { color: var(--purple); }
+
+.trigger {
+  font-size: 13.5px;
+  line-height: 1.55;
+  padding: 10px 0 6px;
+}
+.trigger b { color: var(--text); }
+
+.playbook {
+  font-size: 13px;
+  background: rgba(245, 158, 11, 0.05);
+  border-left: 2px solid var(--amber);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0 4px;
+  color: #ede2c5;
+}
+.playbook b { color: var(--amber); }
+
+.valid {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+
+.skipped {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+.skipped h3 { font-size: 15px; margin-bottom: 8px; }
+.skipped ul { list-style: none; }
+.skipped li {
+  padding: 5px 0;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--border);
+}
+.skipped li:last-child { border-bottom: none; }
+.skipped li b { color: var(--text); }
+
+.disclaimer {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 20px 0;
+  font-size: 13px;
+  color: #ffb4b4;
+}
+.disclaimer b { color: var(--red); }
+
+details.glossary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 14px;
+  margin-top: 18px;
+}
+details.glossary summary {
+  cursor: pointer;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--blue);
+}
+details.glossary .term {
+  margin: 8px 0;
+  font-size: 13px;
+}
+details.glossary .term b { color: var(--text); }
+details.glossary .term span { color: var(--muted); }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11.5px;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .card-ticker { font-size: 18px; }
+  .box .val { font-size: 14px; }
+  header h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Today's Setups</h1>
+  <div class="meta">04.06.2026 14:14:36</div>
+  <div class="sub">5 high-probability swing trade setups · 519 open positions scanned from the portfolio</div>
+</header>
+<div class="tek-cumlede">All five setups are bull flags consolidating above stacked moving averages after strong prior advances, with breakout triggers clustered at or just above current range highs. DOC and DVA offer the most attractive risk-reward; GS and FDX carry wider stops that compress their RR ratios below 1:1 on a strict basis.</div>
+
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">1</div>
+    <div class="card-ticker">DVA</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag bullflag">Bull Flag</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+1.6% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-DVA"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>63</b></span>
+    <span>EMA20 <b>190</b></span>
+    <span>EMA50 <b>175</b></span>
+    <span>SMA200 ~<b>146</b></span>
+    <span>ATR(14) <b>5.8</b></span>
+    <span>Last <b>$198.07</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">191 - 201</div><div class="sub">EMA20 retest, flag consolidation zone</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">184</div><div class="sub">-6.1% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">208</div><div class="sub">+6.1% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">217</div><div class="sub">+10.7% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:1.38 <span class="rr-badge orta">Medium</span></div><div class="sub">Risk $12.0 / Reward $16.5</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $186.61 - $202.56 &nbsp;·&nbsp; <b>Time in range:</b> roughly 10 days, 186.61 to 202.56</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> DVA surged off deeply oversold lows and is now consolidating tightly above EMA20 at 190, forming a textbook bull flag. RSI at 63 confirms momentum without being stretched. Trigger: a clean daily close above 201 on expanding volume relative to the quiet consolidation days.</div>
+  <div class="playbook"><b>Playbook:</b> Enter half size on a close above 201, add the second half on a pullback hold above 195. Bank half at T1 of 208 (6.1% gain); let the remainder run toward T2 at 217 with a trailing stop. Hard stop is 184, which is below EMA20 and cuts risk to roughly 6.1%.</div>
+  <div class="yani-satiri">In short: DVA flags neatly above EMA20 with a clear breakout level and defined risk.</div>
+  <div class="valid">Validity: 5 business days. Voided if the trigger does not fire.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">2</div>
+    <div class="card-ticker">DOC</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag bullflag">Bull Flag</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+1.5% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-DOC"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>57</b></span>
+    <span>EMA20 <b>19</b></span>
+    <span>EMA50 <b>18</b></span>
+    <span>SMA200 ~<b>17</b></span>
+    <span>ATR(14) <b>0.48</b></span>
+    <span>Last <b>$19.36</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">19 - 20</div><div class="sub">EMA20 support, tight flag base</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">19</div><div class="sub">-2.6% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">21</div><div class="sub">+7.7% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">21</div><div class="sub">+7.7% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:3.0 <span class="rr-badge iyi">Strong</span></div><div class="sub">Risk $0.5 / Reward $1.5</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $18.9 - $20.27 &nbsp;·&nbsp; <b>Time in range:</b> roughly 10 days, 18.90 to 20.27</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> DOC has consolidated in a narrow 18.90-20.27 band above rising EMA20 at 19 and EMA50 at 18, all major moving averages stacked bullishly. RSI at 57 leaves ample room for a continued move. Trigger: a daily close above 20.00 with above-average volume confirming the flag breakout.</div>
+  <div class="playbook"><b>Playbook:</b> Enter full size on a close above 20.00 given the tight ATR of 0.48. Bank half at T1 of 21 (7.7%); since T1 and T2 coincide at 21, close the full position there unless price accelerates with strong volume. Stop sits at 19.00, risking 0.50 per share.</div>
+  <div class="yani-satiri">In short: DOC offers the cleanest 3:1 risk-reward in the batch with a crisp breakout level.</div>
+  <div class="valid">Validity: 5 business days. Voided if the trigger does not fire.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">3</div>
+    <div class="card-ticker">CNC</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag bullflag">Bull Flag</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+5.8% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-CNC"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>71</b></span>
+    <span>EMA20 <b>58</b></span>
+    <span>EMA50 <b>51</b></span>
+    <span>SMA200 ~<b>44</b></span>
+    <span>ATR(14) <b>2.06</b></span>
+    <span>Last <b>$62.98</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">59 - 62</div><div class="sub">EMA20 flag base, momentum surge</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">56</div><div class="sub">-7.4% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">65</div><div class="sub">+7.4% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">68</div><div class="sub">+12.4% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:1.33 <span class="rr-badge orta">Medium</span></div><div class="sub">Risk $4.5 / Reward $6.0</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $56.74 - $63.03 &nbsp;·&nbsp; <b>Time in range:</b> roughly 10 days, 56.74 to 63.03</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> CNC ripped 5.8% today, tagging the top of its consolidation range at 63.03, with all moving averages bullishly stacked well below current price. RSI at 71 signals strong momentum but warrants watching for a brief pause. Trigger: entry within the 59-62 pullback zone on any intraday fade, or a confirmed hold above 62 on the next session open.</div>
+  <div class="playbook"><b>Playbook:</b> Scale in with half size in the 59-62 entry zone; add the second half if price holds above 60 on a subsequent day. Take half off at T1 of 65 (7.4% from current); trail stop on remainder toward T2 at 68. Stop at 56 is firm, below the base of the flag and EMA20.</div>
+  <div class="yani-satiri">In short: CNC&#x27;s big-volume surge sets the flag; a 59-62 pullback entry keeps the stop tight and well-defined.</div>
+  <div class="valid">Validity: 5 business days. Voided if price closes below 56.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">4</div>
+    <div class="card-ticker">GS</div>
+    <span class="subport-tag p3">SPX DJIA</span>
+    <span class="setup-tag bullflag">Bull Flag</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+2.5% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-GS"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>72</b></span>
+    <span>EMA20 <b>996</b></span>
+    <span>EMA50 <b>950</b></span>
+    <span>SMA200 ~<b>910</b></span>
+    <span>ATR(14) <b>27.5</b></span>
+    <span>Last <b>$1067.21</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">969 - 1063</div><div class="sub">EMA20 flag, multi-month breakout zone</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">910</div><div class="sub">-10.4% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">1101</div><div class="sub">+8.4% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">1143</div><div class="sub">+12.5% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:1.0 <span class="rr-badge orta">Medium</span></div><div class="sub">Risk $106.0 / Reward $106.0</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $923.81 - $1073.97 &nbsp;·&nbsp; <b>Time in range:</b> roughly 10 days, 923.81 to 1073.97</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> GS has climbed sharply above all major moving averages and is consolidating near range highs at 1073.97 with RSI at 72 showing sustained momentum. The wide 94-point entry range reflects a wide-bodied flag on an elevated-priced name. Trigger: a daily close above 1063 on volume exceeding recent consolidation days.</div>
+  <div class="playbook"><b>Playbook:</b> Enter half size on a close above 1063; add second half if price holds above 1030 on any pullback. Bank half at T1 of 1101; trail stop for the remainder toward T2 at 1143. Stop is firm at 910, below SMA200 and the base of the flag, accepting 10.4% downside risk. Note the 1:1 reward-to-risk ratio is the weakest in this batch; size accordingly.</div>
+  <div class="yani-satiri">In short: GS clears a major level but the 1:1 RR demands smaller position sizing versus peers.</div>
+  <div class="valid">Validity: 5 business days. Voided if price closes below 923.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">5</div>
+    <div class="card-ticker">FDX</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag bullflag">Bull Flag</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+2.0% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-FDX"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>61</b></span>
+    <span>EMA20 <b>319</b></span>
+    <span>EMA50 <b>309</b></span>
+    <span>SMA200 ~<b>283</b></span>
+    <span>ATR(14) <b>9.1</b></span>
+    <span>Last <b>$331.01</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">306 - 338</div><div class="sub">EMA20 flag consolidation, prior range top</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">286</div><div class="sub">-11.2% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">350</div><div class="sub">+8.7% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">364</div><div class="sub">+13.0% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:0.97 <span class="rr-badge orta">Medium</span></div><div class="sub">Risk $36.0 / Reward $35.0</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $290.98 - $341.14 &nbsp;·&nbsp; <b>Time in range:</b> roughly 10 days, 290.98 to 341.14</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> FDX has recovered strongly above EMA20 at 319 and EMA50 at 309, trading near the top of its 290.98-341.14 flag range with RSI at 61 leaving room to run. The 50-point entry range is wide; current price at 331 sits in the upper portion. Trigger: a daily close above 338 confirming a breakout of the flag&#x27;s upper boundary.</div>
+  <div class="playbook"><b>Playbook:</b> Enter half size on a close above 338; add second half only if price holds above 325 on any pullback. Bank half at T1 of 350 (8.7% from current); trail remainder toward T2 at 364. Stop at 286 is below the flag base and SMA200, limiting downside to 11.2%. The sub-1 RR at current price warrants reduced position size.</div>
+  <div class="yani-satiri">In short: FDX&#x27;s flag breakout trigger is clear at 338 but the wide stop demands disciplined sizing.</div>
+  <div class="valid">Validity: 5 business days. Voided if price closes below 291.</div>
+</div>
+<div class="skipped">
+  <h3>Note — positions with no setup generated</h3>
+  <ul><li><b>CIEN</b> (-19.7%, RSI 42): Down 19.7% with RSI at 42; no setup, trend broken, avoid until stabilisation.</li><li><b>CLS</b> (-11.3%, RSI 54): Down 11.3% on the day; no actionable pattern, risk of further downside flush.</li><li><b>ARM</b> (-9.1%, RSI 69): Down 9.1% despite elevated RSI 69; selling into strength signals distribution, no entry.</li><li><b>MU</b> (-8.0%, RSI 69): Down 8.0% with RSI still at 69; extended move lower with momentum divergence, skip.</li><li><b>CRWD</b> (-7.7%, RSI 63): Down 7.7%; RSI 63 not yet washed out, no clear base or flag structure forming.</li><li><b>COHR</b> (-7.6%, RSI 55): Down 7.6% with RSI 55; mid-range momentum, no setup, needs consolidation first.</li></ul>
+</div>
+<div class="yani-nedir"><b>So what?</b> Focus size on DOC and DVA where RR exceeds 1.3:1 and stops are clean; treat GS and FDX as smaller-size opportunistic trades only if triggers fire on volume. The skipped names confirm broad sector rotation out of tech and cyclicals, so defend stop discipline on all entries.</div>
+<div class="disclaimer">
+  <b>Risk warning:</b> This report is not investment advice. All numbers are computed from past price data; they do not guarantee the future. Stick to the stop stated in each setup. Size your position so that <b>1-2% of the total portfolio</b> is at risk (Risk = entry − stop). If you don't trust/like a setup, don't take it.
+</div>
+<details class="glossary">
+  <summary>Glossary (term explanations)</summary>
+  <div class="term"><b>EMA20 / EMA50:</b> <span>Exponentially weighted average price of the last 20 / 50 days; shows trend direction.</span></div>
+  <div class="term"><b>SMA200:</b> <span>Simple average of the last 200 days; the main trend filter.</span></div>
+  <div class="term"><b>RSI(14):</b> <span>14-day momentum index (0-100). &lt;30 oversold, &gt;70 overbought.</span></div>
+  <div class="term"><b>ATR(14):</b> <span>14-day average true range = typical daily move; the unit for stops/targets.</span></div>
+  <div class="term"><b>Weighted R:R:</b> <span>Average reward per unit of risk assuming a half-and-half exit at T1 and T2.</span></div>
+</details>
+<footer>
+  Tradesetups pipeline · auto-generated daily<br>
+  Data: Yahoo daily candles (last ~6 months) + portfolio.json<br>
+  Generated at: 04.06.2026 14:14:36
+</footer>
+</div>
+<script>
+function ema(values, period) {
+  const k = 2 / (period + 1);
+  let prev = values[0];
+  const out = [];
+  for (let i = 0; i < values.length; i++) {
+    if (i === 0) { prev = values[0]; }
+    else { prev = values[i] * k + prev * (1 - k); }
+    out.push(prev);
+  }
+  return out;
+}
+
+function renderChart(containerId, closes, entryLow, entryHigh, stop, t1, t2) {
+  const W = 600, H = 180;
+  const padL = 20, padR = 60, padT = 12, padB = 28;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+
+  const ema20arr = ema(closes, 20);
+  const ema50arr = ema(closes, 50);
+
+  // Y range: include all key levels + price
+  const allVals = closes.concat(ema20arr, ema50arr, [entryLow, entryHigh, stop, t1, t2]);
+  let yMin = Math.min.apply(null, allVals);
+  let yMax = Math.max.apply(null, allVals);
+  const pad = (yMax - yMin) * 0.06;
+  yMin -= pad; yMax += pad;
+
+  function x(i) { return padL + (i / (closes.length - 1)) * plotW; }
+  function y(p) { return padT + (1 - (p - yMin) / (yMax - yMin)) * plotH; }
+
+  // Build SVG
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" style="width:100%;height:180px;display:block;background:#0a0e14;border-radius:4px">';
+
+  // Grid (4 horizontal lines)
+  for (let i = 1; i <= 4; i++) {
+    const gy = padT + (i / 5) * plotH;
+    svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (W - padR) + '" y2="' + gy + '" stroke="#1f2937" stroke-width="1" stroke-dasharray="2,4"/>';
+  }
+
+  // Y-axis labels (right side, 3 levels)
+  const lvls = [yMax - pad, (yMin + yMax) / 2, yMin + pad];
+  lvls.forEach((v, idx) => {
+    const ly = y(v);
+    svg += '<text x="' + (W - padR + 4) + '" y="' + (ly + 3) + '" fill="#6b7280" font-size="10" font-family="monospace">' + v.toFixed(0) + '</text>';
+  });
+
+  // Entry band (green fill)
+  const yEH = y(entryHigh), yEL = y(entryLow);
+  svg += '<rect x="' + padL + '" y="' + yEH + '" width="' + plotW + '" height="' + (yEL - yEH) + '" fill="#10b981" fill-opacity="0.13"/>';
+  svg += '<line x1="' + padL + '" y1="' + yEH + '" x2="' + (W - padR) + '" y2="' + yEH + '" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>';
+  svg += '<line x1="' + padL + '" y1="' + yEL + '" x2="' + (W - padR) + '" y2="' + yEL + '" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>';
+
+  // Stop (red dashed)
+  const yS = y(stop);
+  svg += '<line x1="' + padL + '" y1="' + yS + '" x2="' + (W - padR) + '" y2="' + yS + '" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yS + 3) + '" fill="#ef4444" font-size="10" font-weight="bold">Stop</text>';
+
+  // T1, T2 (green dashed)
+  const yT1 = y(t1), yT2 = y(t2);
+  svg += '<line x1="' + padL + '" y1="' + yT1 + '" x2="' + (W - padR) + '" y2="' + yT1 + '" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yT1 + 3) + '" fill="#10b981" font-size="10" font-weight="bold">H1</text>';
+  svg += '<line x1="' + padL + '" y1="' + yT2 + '" x2="' + (W - padR) + '" y2="' + yT2 + '" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3" stroke-opacity="0.55"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yT2 + 3) + '" fill="#10b981" font-size="10" font-weight="bold" opacity="0.7">H2</text>';
+
+  // Entry label
+  svg += '<text x="' + (W - padR + 4) + '" y="' + ((yEH + yEL) / 2 + 3) + '" fill="#10b981" font-size="10" font-weight="bold">Entry</text>';
+
+  // EMA20 (yellow dashed)
+  let p20 = '';
+  ema20arr.forEach((v, i) => { p20 += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + p20 + '" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>';
+
+  // EMA50 (purple dashed)
+  let p50 = '';
+  ema50arr.forEach((v, i) => { p50 += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + p50 + '" stroke="#a78bfa" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>';
+
+  // Price polyline (blue solid)
+  let pP = '';
+  closes.forEach((v, i) => { pP += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + pP + '" stroke="#60a5fa" stroke-width="2.2" fill="none"/>';
+
+  // Current price dot
+  const lastIdx = closes.length - 1;
+  svg += '<circle cx="' + x(lastIdx) + '" cy="' + y(closes[lastIdx]) + '" r="5" fill="#60a5fa"/>';
+  svg += '<circle cx="' + x(lastIdx) + '" cy="' + y(closes[lastIdx]) + '" r="9" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>';
+
+  // Legend bottom-left
+  const legY = H - 8;
+  svg += '<g font-size="10" font-family="-apple-system,sans-serif">';
+  svg += '<line x1="' + padL + '" y1="' + legY + '" x2="' + (padL+12) + '" y2="' + legY + '" stroke="#60a5fa" stroke-width="2.2"/>';
+  svg += '<text x="' + (padL+16) + '" y="' + (legY+3) + '" fill="#8b949e">Price</text>';
+  svg += '<line x1="' + (padL+60) + '" y1="' + legY + '" x2="' + (padL+72) + '" y2="' + legY + '" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>';
+  svg += '<text x="' + (padL+76) + '" y="' + (legY+3) + '" fill="#8b949e">EMA20</text>';
+  svg += '<line x1="' + (padL+125) + '" y1="' + legY + '" x2="' + (padL+137) + '" y2="' + legY + '" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4,3"/>';
+  svg += '<text x="' + (padL+141) + '" y="' + (legY+3) + '" fill="#8b949e">EMA50</text>';
+  svg += '</g>';
+
+  svg += '</svg>';
+  document.getElementById(containerId).innerHTML = svg;
+}
+const setups = {
+  DVA: { closes: [155.03, 151.85, 150.05, 150.07, 151.99, 155.14, 151.65, 154.08, 157.04, 193.88, 196.26, 198.65, 198.93, 200.54, 198.1, 192.58, 199.74, 199.52, 194.61, 196.87, 198.66, 198.52, 195.57, 194.92, 197.1, 194.36, 189.81, 187.89, 195.03, 198.07], entryLow: 191, entryHigh: 201, stop: 184, t1: 208, t2: 217 },
+  DOC: { closes: [16.41, 16.43, 16.2, 16.05, 15.99, 16.17, 16.42, 16.29, 16.51, 19.5, 19.66, 19.64, 19.76, 19.78, 19.55, 19.56, 19.36, 19.49, 19.3, 19.66, 19.64, 19.73, 20.03, 19.87, 19.51, 19.15, 19.0, 19.45, 19.07, 19.36], entryLow: 19, entryHigh: 20, stop: 19, t1: 21, t2: 21 },
+  CNC: { closes: [41.09, 41.82, 43.5, 49.57, 53.98, 53.69, 53.34, 53.56, 52.98, 55.33, 54.98, 55.96, 56.36, 59.31, 58.81, 58.7, 58.27, 58.23, 59.15, 58.28, 57.77, 59.14, 57.21, 58.82, 58.91, 59.6, 62.0, 59.99, 59.55, 62.98], entryLow: 59, entryHigh: 62, stop: 56, t1: 65, t2: 68 },
+  GS: { closes: [931.3, 926.91, 937.81, 926.55, 905.6, 923.77, 923.71, 903.27, 918.89, 937.35, 925.87, 936.48, 944.86, 945.9, 955.42, 968.96, 948.47, 946.36, 928.74, 982.12, 988.17, 996.73, 994.52, 996.47, 1008.37, 1025.56, 1048.58, 1064.58, 1041.02, 1067.21], entryLow: 969, entryHigh: 1063, stop: 910, t1: 1101, t2: 1143 },
+  FDX: { closes: [316.43, 312.63, 312.56, 314.43, 313.13, 324.99, 317.22, 288.32, 292.3, 303.94, 302.93, 305.06, 305.32, 303.32, 297.9, 306.19, 302.8, 297.92, 302.15, 311.72, 313.38, 317.65, 322.32, 331.81, 331.51, 331.79, 338.49, 329.0, 324.46, 331.01], entryLow: 306, entryHigh: 338, stop: 286, t1: 350, t2: 364 }
+};
+Object.keys(setups).forEach(function(k){var s=setups[k];renderChart('chart-'+k, s.closes, s.entryLow, s.entryHigh, s.stop, s.t1, s.t2);});
+
+</script>
+</body>
+</html>
