@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Setups — June 30, 2026</title>
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-card: #161b22;
+  --bg-elevated: #1c2230;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --green: #10b981;
+  --red: #ef4444;
+  --amber: #f59e0b;
+  --blue: #60a5fa;
+  --purple: #a78bfa;
+  --neutral: #6b7280;
+  --border: #21262d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  padding: 24px 16px 60px;
+}
+
+.container { max-width: 980px; margin: 0 auto; }
+
+header {
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+header .meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+header .sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--blue);
+}
+
+.tek-cumlede {
+  background: var(--bg-card);
+  border-left: 3px solid var(--blue);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 18px 0 24px;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.yani-nedir {
+  background: var(--bg-card);
+  border-left: 3px solid var(--green);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 22px 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.yani-satiri {
+  background: rgba(16, 185, 129, 0.07);
+  border-left: 2px solid var(--green);
+  padding: 8px 14px;
+  border-radius: 4px;
+  margin: 12px 0 4px;
+  font-size: 14px;
+  color: #c9eadc;
+  font-style: italic;
+}
+
+.setup-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  margin-bottom: 22px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.card-rank {
+  background: var(--blue);
+  color: #0d1218;
+  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.card-ticker {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.card-spacer { flex: 1; }
+.subport-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.subport-tag.p1 { background: rgba(96, 165, 250, 0.18); color: var(--blue); }
+.subport-tag.p2 { background: rgba(167, 139, 250, 0.18); color: var(--purple); }
+.subport-tag.p3 { background: rgba(107, 114, 128, 0.18); color: var(--neutral); }
+.subport-tag.p4 { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+
+.setup-tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.setup-tag.pullback { background: rgba(16, 185, 129, 0.18); color: var(--green); }
+.setup-tag.breakout { background: rgba(96, 165, 250, 0.18); color: var(--blue); }
+.setup-tag.bounce { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+.setup-tag.bullflag { background: rgba(167, 139, 250, 0.18); color: var(--purple); }
+
+.daily-pct {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.daily-pct.pos { background: rgba(16, 185, 129, 0.15); color: var(--green); }
+.daily-pct.neg { background: rgba(239, 68, 68, 0.15); color: var(--red); }
+
+.chart-wrap {
+  background: #0a0e14;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px;
+  margin: 8px 0 12px;
+}
+
+.tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tech-row b { color: var(--text); }
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.box .label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.box .val {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.box .sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.box.entry { border-left: 3px solid var(--green); }
+.box.stop  { border-left: 3px solid var(--red); }
+.box.t1, .box.t2 { border-left: 3px solid var(--green); }
+.box.rr   { border-left: 3px solid var(--amber); }
+.box.entry .val { color: var(--green); }
+.box.stop .val { color: var(--red); }
+.box.t1 .val, .box.t2 .val { color: #6ee7b7; }
+.box.t2 .val { opacity: 0.85; }
+.box.rr .val { color: var(--amber); }
+
+.rr-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 4px;
+  font-weight: 600;
+}
+.rr-badge.iyi { background: rgba(16, 185, 129, 0.18); color: var(--green); }
+.rr-badge.orta { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+
+.range-row {
+  font-size: 12.5px;
+  background: rgba(96, 165, 250, 0.05);
+  border-left: 2px solid var(--blue);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+.range-row b { color: var(--text); }
+
+.option-row {
+  font-size: 13px;
+  margin: 6px 0 12px;
+  padding: 8px 12px;
+  background: rgba(167, 139, 250, 0.06);
+  border-left: 2px solid var(--purple);
+  border-radius: 4px;
+}
+.option-row b { color: var(--purple); }
+
+.trigger {
+  font-size: 13.5px;
+  line-height: 1.55;
+  padding: 10px 0 6px;
+}
+.trigger b { color: var(--text); }
+
+.playbook {
+  font-size: 13px;
+  background: rgba(245, 158, 11, 0.05);
+  border-left: 2px solid var(--amber);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0 4px;
+  color: #ede2c5;
+}
+.playbook b { color: var(--amber); }
+
+.valid {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+
+.skipped {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+.skipped h3 { font-size: 15px; margin-bottom: 8px; }
+.skipped ul { list-style: none; }
+.skipped li {
+  padding: 5px 0;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--border);
+}
+.skipped li:last-child { border-bottom: none; }
+.skipped li b { color: var(--text); }
+
+.disclaimer {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 20px 0;
+  font-size: 13px;
+  color: #ffb4b4;
+}
+.disclaimer b { color: var(--red); }
+
+details.glossary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 14px;
+  margin-top: 18px;
+}
+details.glossary summary {
+  cursor: pointer;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--blue);
+}
+details.glossary .term {
+  margin: 8px 0;
+  font-size: 13px;
+}
+details.glossary .term b { color: var(--text); }
+details.glossary .term span { color: var(--muted); }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11.5px;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .card-ticker { font-size: 18px; }
+  .box .val { font-size: 14px; }
+  header h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Today's Setups</h1>
+  <div class="meta">30.06.2026 13:22:42</div>
+  <div class="sub">5 high-probability swing trade setups · 519 open positions scanned from the portfolio</div>
+</header>
+<div class="tek-cumlede">Today's session delivered a broad sweep of volume-backed breakouts and bull flag setups across financials, semiconductors, tech hardware, gaming, and IT distribution, with three names gapping well above multi-week bases. The common thread is elevated RSIs warning against chasing; all five setups require disciplined entry into defined pullback or confirmation zones rather than market-on-open buys.</div>
+
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">1</div>
+    <div class="card-ticker">TROW</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag breakout">Breakout</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+3.7% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-TROW"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>72</b></span>
+    <span>EMA20 <b>107</b></span>
+    <span>EMA50 <b>104</b></span>
+    <span>SMA200 ~<b>100</b></span>
+    <span>ATR(14) <b>2.62</b></span>
+    <span>Last <b>$114.38</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">110 - 112</div><div class="sub">Pullback to breakout base top</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">108</div><div class="sub">-2.7% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">118</div><div class="sub">+6.3% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">122</div><div class="sub">+9.9% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:3.0 <span class="rr-badge iyi">Strong</span></div><div class="sub">Risk $3.0 / Reward $9.0</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $104.4 - $114.55 &nbsp;·&nbsp; <b>Time in range:</b> Multi-week base, roughly 10 trading days</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> TROW broke above a multi-week base (range 104.40-114.55) on 1.8x average volume with a 3.7% single-day move, clearing all major moving averages with room above. RSI at 72 flags short-term heat, so the trade requires a controlled pullback into 110-112 before entry. Trigger is a daily close or intraday bounce with volume confirmation inside that 110-112 zone.</div>
+  <div class="playbook"><b>Playbook:</b> Scale in across 110-112 in two tranches; bank half the position at T1 of 118 (6.3% gain). Trail the stop on the remainder to breakeven once T1 is hit, with hard stop at 108 on a closing basis. Invalidation is any daily close below 108, which undercuts the base and negates the breakout thesis.</div>
+  <div class="yani-satiri">In short: Clean volume breakout above a multi-week base; wait for the 110-112 retest before committing.</div>
+  <div class="valid">Validity: 5 business days. Voided if the trigger entry zone is not reached or price closes below 108.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">2</div>
+    <div class="card-ticker">AMAT</div>
+    <span class="subport-tag p3">SPX NDX</span>
+    <span class="setup-tag breakout">Breakout</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+10.8% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-AMAT"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>70</b></span>
+    <span>EMA20 <b>572</b></span>
+    <span>EMA50 <b>497</b></span>
+    <span>SMA200 ~<b>396</b></span>
+    <span>ATR(14) <b>41.11</b></span>
+    <span>Last <b>$694.64</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">663 - 676</div><div class="sub">Breakout base retest, EMA20 above</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">620</div><div class="sub">-7.4% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">756</div><div class="sub">+12.9% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">818</div><div class="sub">+22.2% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:2.37 <span class="rr-badge orta">Medium</span></div><div class="sub">Risk $49.5 / Reward $117.5</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $466.51 - $708.99 &nbsp;·&nbsp; <b>Time in range:</b> Multi-week base, range 466.51 to 708.99</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> AMAT surged 10.8% on 1.6x volume, clearing a broad multi-week consolidation range that extended from 466.51 to 708.99, with the stock now printing 694.64 near the top of that band. All moving averages are stacked bullishly far below current price. The concrete trigger is a pullback and hold within 663-676 on reduced volume, followed by a bounce day with expanding volume.</div>
+  <div class="playbook"><b>Playbook:</b> Enter in two equal lots across the 663-676 zone; take half off at T1 of 756 (12.9% from entry midpoint). Move stop to breakeven on the remainder and target T2 at 818. Hard stop on the full position is 620 on a closing basis; a close there indicates the breakout is failing.</div>
+  <div class="yani-satiri">In short: Massive breakout with all averages well below; entry only on a calm pullback to 663-676.</div>
+  <div class="valid">Validity: 5 business days. Voided if price closes below 620 or the 663-676 entry zone is not revisited.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">3</div>
+    <div class="card-ticker">GLW</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag breakout">Breakout</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+15.7% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-GLW"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>69</b></span>
+    <span>EMA20 <b>201</b></span>
+    <span>EMA50 <b>185</b></span>
+    <span>SMA200 ~<b>150</b></span>
+    <span>ATR(14) <b>18.18</b></span>
+    <span>Last <b>$255.69</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">228 - 233</div><div class="sub">EMA20 retest after gap-breakout</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">209</div><div class="sub">-9.3% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">283</div><div class="sub">+22.8% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">310</div><div class="sub">+34.5% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:3.07 <span class="rr-badge iyi">Strong</span></div><div class="sub">Risk $21.5 / Reward $66.0</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $166.0 - $258.8 &nbsp;·&nbsp; <b>Time in range:</b> Multi-week base, range 166.00 to 258.80</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 5-6 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> GLW exploded 15.7% on 1.6x volume, clearing the top of its multi-week range at 258.80 and leaving all moving averages (EMA20 201, EMA50 185, SMA200 150) well behind. The magnitude of the move means the stock needs to digest gains; the trigger is a controlled fade into 228-233 on low volume followed by a stabilisation or bounce day.</div>
+  <div class="playbook"><b>Playbook:</b> Build the position in two tranches between 228 and 233; sell half at T1 of 283 (22.8% return). Raise the stop to cost basis once T1 is cleared and let the second half run toward T2 at 310. Full stop is 209 on a closing basis; a close there means the breakout gap has been substantially filled and the setup is void.</div>
+  <div class="yani-satiri">In short: Gap-and-go breakout with 34% potential to T2, but respect the 22-point entry spread before sizing in.</div>
+  <div class="valid">Validity: 7 business days given the extended move. Voided if price closes below 209.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">4</div>
+    <div class="card-ticker">MGM</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag bullflag">Bull Flag</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+1.0% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-MGM"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>70</b></span>
+    <span>EMA20 <b>47</b></span>
+    <span>EMA50 <b>43</b></span>
+    <span>SMA200 ~<b>39</b></span>
+    <span>ATR(14) <b>1.56</b></span>
+    <span>Last <b>$49.69</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">47 - 50</div><div class="sub">EMA20 retest, tight bull flag</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">45</div><div class="sub">-7.2% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">52</div><div class="sub">+7.2% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">54</div><div class="sub">+11.3% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:1.29 <span class="rr-badge orta">Medium</span></div><div class="sub">Risk $3.5 / Reward $4.5</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $46.14 - $50.55 &nbsp;·&nbsp; <b>Time in range:</b> Tight flag, roughly 8 trading days, 46.14-50.55</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 3-4 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> MGM has consolidated tightly between 46.14 and 50.55 after a strong prior advance, with all major averages (EMA20 47, EMA50 43, SMA200 39) stacked below price confirming the uptrend structure. Volume was below average at 0.8x, consistent with a healthy flag pause. Trigger is a daily close above 50 on volume at or above the 20-day average, confirming flag resolution.</div>
+  <div class="playbook"><b>Playbook:</b> Enter on the close above 50 or an intraday breakout with volume; the entry zone 47-50 allows averaging down slightly if price dips back to EMA20 at 47. Bank half at T1 of 52; hard stop at 45 on a closing basis. R/R of 1.29 is the tightest of today&#x27;s setups, so keep position size disciplined.</div>
+  <div class="yani-satiri">In short: Textbook bull flag at EMA20 with a clean stop level at 45; flag resolution above 50 is the trigger.</div>
+  <div class="valid">Validity: 5 business days. Voided if price closes below 45.</div>
+</div>
+<div class="setup-card">
+  <div class="card-header">
+    <div class="card-rank">5</div>
+    <div class="card-ticker">CDW</div>
+    <span class="subport-tag p3">SPX</span>
+    <span class="setup-tag bullflag">Bull Flag</span>
+    <span class="card-spacer"></span>
+    <span class="daily-pct pos">+4.9% (today)</span>
+  </div>
+  <div class="chart-wrap"><div id="chart-CDW"></div></div>
+  <div class="tech-row">
+    <span>RSI(14) <b>63</b></span>
+    <span>EMA20 <b>129</b></span>
+    <span>EMA50 <b>126</b></span>
+    <span>SMA200 ~<b>126</b></span>
+    <span>ATR(14) <b>5.66</b></span>
+    <span>Last <b>$139.82</b></span>
+  </div>
+  <div class="boxes">
+    <div class="box entry"><div class="label">Entry</div><div class="val">128 - 139</div><div class="sub">EMA20/SMA200 confluence retest</div></div>
+    <div class="box stop"><div class="label">Stop</div><div class="val">120</div><div class="sub">-10.1% · structure</div></div>
+    <div class="box t1"><div class="label">Target 1</div><div class="val">146</div><div class="sub">+9.4% · T1</div></div>
+    <div class="box t2"><div class="label">Target 2</div><div class="val">154</div><div class="sub">+15.4% · T2</div></div>
+    <div class="box rr"><div class="label">Weighted R:R</div><div class="val">1:1.22 <span class="rr-badge orta">Medium</span></div><div class="sub">Risk $13.5 / Reward $16.5</div></div>
+  </div>
+  <div class="range-row"><b>Range:</b> $123.09 - $140.1 &nbsp;·&nbsp; <b>Time in range:</b> Bull flag consolidation, range 123.09 to 140.10</div>
+  <div class="option-row"><b>Option:</b> Long calls ~0.45 delta, 4-5 week expiry</div>
+  <div class="trigger"><b>Trigger:</b> CDW rallied 4.9% to 139.82, approaching the top of a tight consolidation range (123.09-140.10) that sits right atop the EMA20, EMA50, and SMA200 all converging near 126-129, a strong multi-timeframe support cluster. RSI at 63 leaves room before overbought. Trigger is a daily close above 140.10 on volume exceeding the 20-day average, confirming the flag breakout.</div>
+  <div class="playbook"><b>Playbook:</b> Enter on a confirmed close above 140.10; secondary entry is available on any pullback to 128-139 if the breakout initially stalls. Bank half at T1 of 146; stop is 120 on a closing basis, which undercuts the support confluence. R/R of 1.22 is modest, so size accordingly and do not add below the 128 floor.</div>
+  <div class="yani-satiri">In short: Triple moving-average support beneath a tight flag; a close above 140.10 on volume confirms the breakout.</div>
+  <div class="valid">Validity: 5 business days. Voided if price closes below 120.</div>
+</div>
+<div class="skipped">
+  <h3>Note — positions with no setup generated</h3>
+  <ul><li><b>ALAB</b> (+16.4%, RSI 69): Up 16.4% with RSI 69; no defined base or structured entry zone available today.</li><li><b>RKLB</b> (+15.9%, RSI 46): Up 15.9% but RSI only 46; momentum and structure diverge, no clean setup framing.</li><li><b>MSTR</b> (+12.6%, RSI 32): Up 12.6% but RSI at 32 signals underlying weakness; Bitcoin proxy volatility too erratic.</li><li><b>KLAC</b> (+12.0%, RSI 66): Up 12.0% with RSI 66; insufficient structural data provided to frame a clean entry zone.</li><li><b>WDC</b> (+11.2%, RSI 57): Up 11.2% with RSI 57; move lacks confirming RSI strength, no setup structure identified.</li><li><b>AXON</b> (+9.8%, RSI 67): Up 9.8% with RSI 67; no base or flag geometry provided to anchor a disciplined entry.</li></ul>
+</div>
+<div class="yani-nedir"><b>So what?</b> Resist FOMO on the big gap names like GLW and AMAT; the edge is in waiting for the pullback to the prescribed entry bands where risk is quantified and stops are clean. MGM and CDW offer tighter, lower-volatility expressions of the same bullish tape for traders who prefer smaller ATR.</div>
+<div class="disclaimer">
+  <b>Risk warning:</b> This report is not investment advice. All numbers are computed from past price data; they do not guarantee the future. Stick to the stop stated in each setup. Size your position so that <b>1-2% of the total portfolio</b> is at risk (Risk = entry − stop). If you don't trust/like a setup, don't take it.
+</div>
+<details class="glossary">
+  <summary>Glossary (term explanations)</summary>
+  <div class="term"><b>EMA20 / EMA50:</b> <span>Exponentially weighted average price of the last 20 / 50 days; shows trend direction.</span></div>
+  <div class="term"><b>SMA200:</b> <span>Simple average of the last 200 days; the main trend filter.</span></div>
+  <div class="term"><b>RSI(14):</b> <span>14-day momentum index (0-100). &lt;30 oversold, &gt;70 overbought.</span></div>
+  <div class="term"><b>ATR(14):</b> <span>14-day average true range = typical daily move; the unit for stops/targets.</span></div>
+  <div class="term"><b>Weighted R:R:</b> <span>Average reward per unit of risk assuming a half-and-half exit at T1 and T2.</span></div>
+</details>
+<footer>
+  Tradesetups pipeline · auto-generated daily<br>
+  Data: Yahoo daily candles (last ~6 months) + portfolio.json<br>
+  Generated at: 30.06.2026 13:22:42
+</footer>
+</div>
+<script>
+function ema(values, period) {
+  const k = 2 / (period + 1);
+  let prev = values[0];
+  const out = [];
+  for (let i = 0; i < values.length; i++) {
+    if (i === 0) { prev = values[0]; }
+    else { prev = values[i] * k + prev * (1 - k); }
+    out.push(prev);
+  }
+  return out;
+}
+
+function renderChart(containerId, closes, entryLow, entryHigh, stop, t1, t2) {
+  const W = 600, H = 180;
+  const padL = 20, padR = 60, padT = 12, padB = 28;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+
+  const ema20arr = ema(closes, 20);
+  const ema50arr = ema(closes, 50);
+
+  // Y range: include all key levels + price
+  const allVals = closes.concat(ema20arr, ema50arr, [entryLow, entryHigh, stop, t1, t2]);
+  let yMin = Math.min.apply(null, allVals);
+  let yMax = Math.max.apply(null, allVals);
+  const pad = (yMax - yMin) * 0.06;
+  yMin -= pad; yMax += pad;
+
+  function x(i) { return padL + (i / (closes.length - 1)) * plotW; }
+  function y(p) { return padT + (1 - (p - yMin) / (yMax - yMin)) * plotH; }
+
+  // Build SVG
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" style="width:100%;height:180px;display:block;background:#0a0e14;border-radius:4px">';
+
+  // Grid (4 horizontal lines)
+  for (let i = 1; i <= 4; i++) {
+    const gy = padT + (i / 5) * plotH;
+    svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (W - padR) + '" y2="' + gy + '" stroke="#1f2937" stroke-width="1" stroke-dasharray="2,4"/>';
+  }
+
+  // Y-axis labels (right side, 3 levels)
+  const lvls = [yMax - pad, (yMin + yMax) / 2, yMin + pad];
+  lvls.forEach((v, idx) => {
+    const ly = y(v);
+    svg += '<text x="' + (W - padR + 4) + '" y="' + (ly + 3) + '" fill="#6b7280" font-size="10" font-family="monospace">' + v.toFixed(0) + '</text>';
+  });
+
+  // Entry band (green fill)
+  const yEH = y(entryHigh), yEL = y(entryLow);
+  svg += '<rect x="' + padL + '" y="' + yEH + '" width="' + plotW + '" height="' + (yEL - yEH) + '" fill="#10b981" fill-opacity="0.13"/>';
+  svg += '<line x1="' + padL + '" y1="' + yEH + '" x2="' + (W - padR) + '" y2="' + yEH + '" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>';
+  svg += '<line x1="' + padL + '" y1="' + yEL + '" x2="' + (W - padR) + '" y2="' + yEL + '" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>';
+
+  // Stop (red dashed)
+  const yS = y(stop);
+  svg += '<line x1="' + padL + '" y1="' + yS + '" x2="' + (W - padR) + '" y2="' + yS + '" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yS + 3) + '" fill="#ef4444" font-size="10" font-weight="bold">Stop</text>';
+
+  // T1, T2 (green dashed)
+  const yT1 = y(t1), yT2 = y(t2);
+  svg += '<line x1="' + padL + '" y1="' + yT1 + '" x2="' + (W - padR) + '" y2="' + yT1 + '" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yT1 + 3) + '" fill="#10b981" font-size="10" font-weight="bold">H1</text>';
+  svg += '<line x1="' + padL + '" y1="' + yT2 + '" x2="' + (W - padR) + '" y2="' + yT2 + '" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3" stroke-opacity="0.55"/>';
+  svg += '<text x="' + (W - padR + 4) + '" y="' + (yT2 + 3) + '" fill="#10b981" font-size="10" font-weight="bold" opacity="0.7">H2</text>';
+
+  // Entry label
+  svg += '<text x="' + (W - padR + 4) + '" y="' + ((yEH + yEL) / 2 + 3) + '" fill="#10b981" font-size="10" font-weight="bold">Entry</text>';
+
+  // EMA20 (yellow dashed)
+  let p20 = '';
+  ema20arr.forEach((v, i) => { p20 += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + p20 + '" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>';
+
+  // EMA50 (purple dashed)
+  let p50 = '';
+  ema50arr.forEach((v, i) => { p50 += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + p50 + '" stroke="#a78bfa" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>';
+
+  // Price polyline (blue solid)
+  let pP = '';
+  closes.forEach((v, i) => { pP += (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); });
+  svg += '<path d="' + pP + '" stroke="#60a5fa" stroke-width="2.2" fill="none"/>';
+
+  // Current price dot
+  const lastIdx = closes.length - 1;
+  svg += '<circle cx="' + x(lastIdx) + '" cy="' + y(closes[lastIdx]) + '" r="5" fill="#60a5fa"/>';
+  svg += '<circle cx="' + x(lastIdx) + '" cy="' + y(closes[lastIdx]) + '" r="9" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>';
+
+  // Legend bottom-left
+  const legY = H - 8;
+  svg += '<g font-size="10" font-family="-apple-system,sans-serif">';
+  svg += '<line x1="' + padL + '" y1="' + legY + '" x2="' + (padL+12) + '" y2="' + legY + '" stroke="#60a5fa" stroke-width="2.2"/>';
+  svg += '<text x="' + (padL+16) + '" y="' + (legY+3) + '" fill="#8b949e">Price</text>';
+  svg += '<line x1="' + (padL+60) + '" y1="' + legY + '" x2="' + (padL+72) + '" y2="' + legY + '" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>';
+  svg += '<text x="' + (padL+76) + '" y="' + (legY+3) + '" fill="#8b949e">EMA20</text>';
+  svg += '<line x1="' + (padL+125) + '" y1="' + legY + '" x2="' + (padL+137) + '" y2="' + legY + '" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4,3"/>';
+  svg += '<text x="' + (padL+141) + '" y="' + (legY+3) + '" fill="#8b949e">EMA50</text>';
+  svg += '</g>';
+
+  svg += '</svg>';
+  document.getElementById(containerId).innerHTML = svg;
+}
+const setups = {
+  TROW: { closes: [102.01, 102.38, 101.72, 101.83, 101.95, 103.39, 103.82, 104.5, 103.55, 104.53, 103.92, 104.31, 104.01, 106.96, 105.99, 105.45, 105.91, 106.43, 108.27, 109.64, 108.61, 108.94, 108.12, 107.65, 107.99, 106.0, 105.2, 106.34, 110.27, 114.38], entryLow: 110, entryHigh: 112, stop: 108, t1: 118, t2: 122 },
+  AMAT: { closes: [436.62, 413.57, 406.91, 426.85, 427.36, 432.16, 454.89, 448.25, 449.68, 450.06, 458.17, 490.05, 500.77, 501.7, 453.01, 492.17, 499.21, 497.01, 552.64, 567.25, 585.78, 568.23, 592.92, 617.11, 640.18, 585.88, 588.97, 668.0, 626.84, 694.64], entryLow: 663, entryHigh: 676, stop: 620, t1: 756, t2: 818 },
+  GLW: { closes: [191.81, 178.55, 175.83, 180.69, 191.89, 194.05, 196.17, 190.89, 182.97, 181.16, 176.7, 200.4, 200.76, 197.7, 177.58, 187.54, 173.94, 168.17, 176.55, 179.2, 187.88, 177.42, 175.4, 194.92, 209.83, 194.07, 205.83, 228.01, 221.05, 255.69], entryLow: 228, entryHigh: 233, stop: 209, t1: 283, t2: 310 },
+  MGM: { closes: [36.97, 37.09, 36.02, 36.51, 37.66, 38.4, 38.45, 41.95, 42.93, 43.67, 50.69, 48.36, 48.3, 47.94, 47.51, 47.26, 47.15, 46.91, 47.22, 48.97, 48.62, 47.98, 46.94, 46.84, 46.57, 46.92, 47.09, 47.2, 49.19, 49.69], entryLow: 47, entryHigh: 50, stop: 45, t1: 52, t2: 54 },
+  CDW: { closes: [102.07, 104.04, 104.35, 106.21, 106.88, 110.82, 108.59, 114.19, 116.16, 125.45, 140.98, 139.72, 137.3, 139.45, 133.04, 134.81, 133.33, 129.3, 129.13, 132.19, 131.3, 130.09, 126.7, 128.37, 123.57, 130.06, 130.22, 128.02, 133.3, 139.82], entryLow: 128, entryHigh: 139, stop: 120, t1: 146, t2: 154 }
+};
+Object.keys(setups).forEach(function(k){var s=setups[k];renderChart('chart-'+k, s.closes, s.entryLow, s.entryHigh, s.stop, s.t1, s.t2);});
+
+</script>
+</body>
+</html>
